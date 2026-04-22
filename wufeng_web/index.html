@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="zh-TW">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Wufeng Chaoyang - 霧峰朝陽，共創晨曦</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Work+Sans:wght@400;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#a93705",
+                        "secondary": "#7b5800",
+                        "tertiary": "#496640",
+                        "surface": "#fff8f5",
+                        "on-surface": "#1e1b18",
+                        "on-surface-variant": "#58413a",
+                        "primary-fixed": "#ffdbd0",
+                        "on-primary-fixed": "#390c00",
+                        "on-primary-fixed-variant": "#832700",
+                        "secondary-fixed": "#ffdea4",
+                        "surface-container": "#f5ece7",
+                        "surface-container-low": "#fbf2ed",
+                        "on-background": "#1e1b18"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "base": "8px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "container-max": "1200px",
+                        "lg": "48px",
+                        "gutter": "24px",
+                        "xl": "80px"
+                    },
+                    "fontFamily": {
+                        "display-xl": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "title-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Work Sans"],
+                        "body-md": ["Work Sans"],
+                        "label-md": ["Work Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden selection:bg-primary/20">
+    <!-- Header -->
+    <header id="main-header" class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-xl border-b border-orange-100/50 shadow-sm transition-all duration-500">
+        <nav class="flex justify-between items-center h-20 px-6 md:px-12 max-w-7xl mx-auto font-['Plus_Jakarta_Sans'] antialiased tracking-tight">
+            <div class="flex items-center gap-3 group cursor-pointer">
+                <div class="relative">
+                    <span class="material-symbols-outlined text-primary text-3xl animate-pulse">wb_sunny</span>
+                    <div class="absolute -inset-1 bg-primary/20 blur-lg rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+                <span class="text-2xl font-extrabold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Wufeng Chaoyang</span>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-10 font-label-md">
+                <a class="nav-link" href="#about">活動介紹</a>
+                <a class="nav-link" href="#schedule">活動時程</a>
+                <a class="nav-link" href="#speakers">講師陣容</a>
+                <a class="nav-link" href="#dining">特色餐廳</a>
+                <button class="btn-primary">立即報名</button>
+            </div>
+
+            <button id="menu-toggle" class="md:hidden text-primary p-2 hover:bg-primary/10 rounded-full transition-colors">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </nav>
+        
+        <div id="mobile-menu" class="mobile-menu-drawer md:hidden">
+            <div class="flex flex-col h-full p-8">
+                <div class="flex justify-between items-center mb-12">
+                    <span class="text-2xl font-extrabold text-primary">Wufeng Chaoyang</span>
+                    <button id="menu-close" class="text-on-surface p-2">
+                        <span class="material-symbols-outlined text-3xl">close</span>
+                    </button>
+                </div>
+                <div class="flex flex-col gap-8 text-2xl font-bold">
+                    <a href="#about">活動介紹</a>
+                    <a href="#schedule">活動時程</a>
+                    <a href="#speakers">講師陣容</a>
+                    <a href="#dining">特色餐廳</a>
+                </div>
+                <div class="mt-auto pt-12 border-t border-orange-100">
+                    <button class="w-full bg-primary text-white py-5 rounded-2xl font-bold text-xl">立即報名</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-background">
+                <img src="wufeng_sunrise_hero_1776847124955.png" alt="Wufeng Sunrise" class="hero-img">
+                <div class="hero-overlay"></div>
+                <div class="mist-layer"></div>
+            </div>
+            
+            <div class="hero-content">
+                <div class="max-w-3xl space-y-8 text-center md:text-left">
+                    <div class="badge animate-fade-in-up">
+                        <span class="badge-dot"></span>
+                        2024 夏季系列活動
+                    </div>
+                    <h1 class="hero-title animate-fade-in-up">
+                        霧峰朝陽，<br/><span class="text-secondary-fixed">共創晨曦</span>
+                    </h1>
+                    <p class="hero-description animate-fade-in-up">
+                        探索台灣之心，體驗霧峰文化與朝陽精神。我們誠邀您一同參與這場充滿朝氣的社群盛典，讓在地能量發光發熱。
+                    </p>
+                    <div class="hero-actions animate-fade-in-up">
+                        <button class="btn-hero-primary">立即探索活動</button>
+                        <button class="btn-hero-outline">了解更多細節</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="ant-trail ant-animation-1 top-1/4 right-10"><span class="material-symbols-outlined">bug_report</span></div>
+            <div class="ant-trail ant-animation-2 bottom-20 left-1/3"><span class="material-symbols-outlined">bug_report</span></div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-xl max-w-7xl mx-auto px-6 md:px-12 relative section-animate">
+            <div class="text-center mb-20 space-y-4">
+                <span class="section-tag">Discovery</span>
+                <h2 class="font-headline-lg text-headline-lg">霧峰朝陽：在地精神的延續</h2>
+                <div class="divider"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="feature-card group">
+                    <div class="icon-box">
+                        <span class="material-symbols-outlined text-4xl">landscape</span>
+                    </div>
+                    <h3 class="font-title-lg text-title-lg mb-4">在地探索</h3>
+                    <p class="text-on-surface-variant font-body-md">深度導覽霧峰自然生態與歷史古蹟，發掘城市角落隱藏的美麗與故事。</p>
+                    <div class="card-link">
+                        <span>查看導覽地圖</span>
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </div>
+                </div>
+
+                <div class="feature-card group">
+                    <div class="card-img-box">
+                        <img src="wufeng_community_gathering_1776847637719.png" alt="Community Gathering">
+                    </div>
+                    <div class="icon-box">
+                        <span class="material-symbols-outlined text-4xl">groups</span>
+                    </div>
+                    <h3 class="font-title-lg text-title-lg mb-4">社群共榮</h3>
+                    <p class="text-on-surface-variant font-body-md">匯聚朝陽科技大學與地方能量，建立互助共好的永續社區生活圈。</p>
+                    <div class="card-link">
+                        <span>加入志工計畫</span>
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </div>
+                </div>
+
+                <div class="feature-card group">
+                    <div class="icon-box">
+                        <span class="material-symbols-outlined text-4xl">restaurant_menu</span>
+                    </div>
+                    <h3 class="font-title-lg text-title-lg mb-4">特色食光</h3>
+                    <p class="text-on-surface-variant font-body-md">品嚐在地食材打造的創意料理，透過味蕾感受霧峰土地的豐饒與暖意。</p>
+                    <div class="card-link">
+                        <span>預約私房料理</span>
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Section -->
+        <section class="py-xl bg-surface-container-low relative overflow-hidden section-animate">
+            <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="image-wrapper group">
+                    <div class="image-glow"></div>
+                    <img src="wufeng_exploration_1776847222692.png" alt="Wufeng Culture" class="feature-img">
+                </div>
+                <div class="space-y-8">
+                    <h2 class="font-headline-lg text-headline-lg">深耕在地，<br/><span class="text-primary">連接傳統與現代</span></h2>
+                    <p class="text-on-surface-variant text-body-lg">霧峰不僅是台中的文化重鎮，更是創意與傳統交織的沃土。我們致力於將這些珍貴的文化資產，讓更多人看見霧峰之美。</p>
+                    <ul class="feature-list">
+                        <li><span class="material-symbols-outlined">check</span> 超過 50 個在地合作夥伴</li>
+                        <li><span class="material-symbols-outlined">check</span> 年度三大主題文化慶典</li>
+                        <li><span class="material-symbols-outlined">check</span> 數位導覽地圖即時更新</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Schedule -->
+        <section id="schedule" class="py-xl section-animate">
+            <div class="max-w-7xl mx-auto px-6 md:px-12">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6">
+                    <div class="space-y-4">
+                        <span class="section-tag-alt">Agenda</span>
+                        <h2 class="font-headline-lg text-headline-lg">活動盛事時程</h2>
+                    </div>
+                    <p class="text-on-surface-variant max-w-md text-lg">一整天豐富的行程安排，與我們一起充實每一刻，體驗霧峰的百變風情。</p>
+                </div>
+                
+                <div class="timeline">
+                    <div class="timeline-line"></div>
+                    <div class="timeline-item left group">
+                        <div class="time-label text-right">
+                            <span class="time-text text-primary">08:00</span>
+                            <span class="time-sub">AM - MORNING</span>
+                        </div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4 class="font-title-lg mb-4">晨曦報到與開幕式</h4>
+                            <p class="text-on-surface-variant">在朝陽山麓下迎接第一道曙光，開啟美好的一天。現場將有在地音樂家表演。</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item right group">
+                        <div class="timeline-content">
+                            <h4 class="font-title-lg mb-4">人文地景漫步</h4>
+                            <p class="text-on-surface-variant">漫遊在地古厝與創意市集，深入體驗霧峰的人文氣息。分享不為人知的在地小故事。</p>
+                        </div>
+                        <div class="timeline-dot secondary"></div>
+                        <div class="time-label text-left">
+                            <span class="time-text text-secondary">10:00</span>
+                            <span class="time-sub">AM - MIDDAY</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Speakers -->
+        <section id="speakers" class="py-xl bg-surface-container section-animate">
+            <div class="max-w-7xl mx-auto px-6 md:px-12">
+                <div class="text-center mb-20 space-y-4">
+                    <span class="section-tag">Expertise</span>
+                    <h2 class="font-headline-lg text-headline-lg">特邀講師陣容</h2>
+                    <p class="text-on-surface-variant max-w-2xl mx-auto text-lg">與在地文化領袖與產學專家面對面，啟發對社區營造的全新想像。</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="speaker-card group">
+                        <div class="avatar-box">
+                            <img src="https://i.pravatar.cc/300?u=1" alt="Speaker">
+                        </div>
+                        <h4>林志明 教授</h4>
+                        <p>朝陽科技大學 設計學院</p>
+                    </div>
+                    <div class="speaker-card group">
+                        <div class="avatar-box">
+                            <img src="https://i.pravatar.cc/300?u=2" alt="Speaker">
+                        </div>
+                        <h4>王曉芳 女士</h4>
+                        <p>霧峰文化工作室 創辦人</p>
+                    </div>
+                    <div class="speaker-card group">
+                        <div class="avatar-box">
+                            <img src="https://i.pravatar.cc/300?u=3" alt="Speaker">
+                        </div>
+                        <h4>陳建國 主廚</h4>
+                        <p>米其林在地推薦餐廳</p>
+                    </div>
+                    <div class="speaker-card group">
+                        <div class="avatar-box">
+                            <img src="https://i.pravatar.cc/300?u=4" alt="Speaker">
+                        </div>
+                        <h4>張美玲 經理</h4>
+                        <p>永續社區發展協會</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dining -->
+        <section id="dining" class="py-xl bg-surface relative overflow-hidden section-animate">
+            <div class="max-w-7xl mx-auto px-6 md:px-12">
+                <div class="text-center mb-20 space-y-4">
+                    <span class="section-tag">Gastronomy</span>
+                    <h2 class="font-headline-lg text-headline-lg">特色餐廳 - 朝陽食光</h2>
+                    <p class="text-on-surface-variant max-w-2xl mx-auto text-lg">精選大里與霧峰在地鮮材，融合現代料理美學，呈現最具深度的味蕾旅程。</p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div class="relative">
+                        <img src="wufeng_gastronomy_1776847312857.png" alt="Gourmet Dining" class="dining-img">
+                    </div>
+                    
+                    <div class="dining-features">
+                        <div class="feature-item">
+                            <div class="feature-icon tertiary"><span class="material-symbols-outlined">eco</span></div>
+                            <div>
+                                <h4>產地直送新鮮食材</h4>
+                                <p>每日由霧峰、大里在地小農親送，保證蔬菜與果物的最高鮮甜度。</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon primary"><span class="material-symbols-outlined">skillet</span></div>
+                            <div>
+                                <h4>法式工藝與中式靈魂</h4>
+                                <p>結合精緻法餐手法重新詮釋台灣傳統料理，展現現代時尚感。</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon secondary"><span class="material-symbols-outlined">energy_savings_leaf</span></div>
+                            <div>
+                                <h4>永續慢食文化</h4>
+                                <p>提倡環保低碳烹飪，減少食物浪費，與土地建立和諧共榮。</p>
+                            </div>
+                        </div>
+                        <button class="w-full btn-cta-primary mt-8">立即預約朝陽食光</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map -->
+        <section class="py-xl bg-surface-container-low relative section-animate">
+            <div class="max-w-7xl mx-auto px-6 md:px-12 text-center">
+                <h2 class="font-headline-lg text-headline-lg mb-4">活動地點</h2>
+                <p class="text-on-surface-variant mb-16 text-lg">台中市霧峰區吉峰東路168號 - 朝陽科技大學</p>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3642.569363539257!2d120.71617057606627!3d24.08144217822004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693b79313a0169%3A0xe54d207f287f3b89!2z5pyd6Zm956eR5oqA5aSn5a24!5e0!3m2!1szh-TW!2stw!4v1709123456789!5m2!1szh-TW!2stw" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section id="contact" class="cta-section">
+            <div class="cta-content">
+                <h2 class="font-headline-lg text-headline-lg">準備好加入這場晨曦之約嗎？</h2>
+                <p class="text-on-primary-fixed-variant text-lg max-w-2xl mx-auto">與我們共同開啟霧峰的新篇章。無論您是在地居民、學生或旅人，我們都熱烈歡迎。</p>
+                <div class="cta-buttons">
+                    <a href="tel:0423323000" class="btn-cta-white">
+                        <span class="material-symbols-outlined">call</span> 04-2332-3000
+                    </a>
+                    <button class="btn-cta-solid">聯繫客服詢問</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-primary text-3xl">wb_sunny</span>
+                    <span class="text-2xl font-bold">Wufeng Chaoyang</span>
+                </div>
+                <p class="mt-8 text-lg">致力於推廣霧峰在地文化與永續社群發展。連結人心，與土地共同呼吸。</p>
+                <div class="social-links mt-8">
+                    <a href="#"><span class="material-symbols-outlined">share</span></a>
+                    <a href="#"><span class="material-symbols-outlined">mail</span></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h5>探索霧峰</h5>
+                <ul>
+                    <li><a href="#about">活動介紹</a></li>
+                    <li><a href="#schedule">活動時程</a></li>
+                    <li><a href="#speakers">講師陣容</a></li>
+                    <li><a href="#dining">特色餐廳</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h5>聯絡資訊</h5>
+                <ul>
+                    <li class="flex gap-4"><span class="material-symbols-outlined text-primary">call</span> 04-2332-3000</li>
+                    <li class="flex gap-4"><span class="material-symbols-outlined text-primary">location_on</span> 413 台中市霧峰區吉峰東路168號</li>
+                </ul>
+            </div>
+
+            <div class="footer-news">
+                <h5>最新消息</h5>
+                <div class="news-card">
+                    <span class="news-tag">Coming Soon</span>
+                    <p class="font-bold">2024 夏季社群共融市集</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Wufeng Chaoyang. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>
